@@ -4,3 +4,9 @@ export const restaurantsSelector = (reduxState) => {
     restaurant_a.name.localeCompare(restaurant_b.name)
   );
 };
+
+export const selectRestaurantsThatSellPizza = (pizzaId) => (reduxState) => {
+  return reduxState.restaurants.all.filter((restaurant) =>
+    restaurant.pizzas.includes(pizzaId)
+  );
+};
